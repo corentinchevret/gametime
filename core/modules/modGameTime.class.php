@@ -87,7 +87,10 @@ class modGameTime extends DolibarrModules
 		//							'dir' => array('output' => 'othermodulename'),      // To force the default directories names
 		//							'workflow' => array('WORKFLOW_MODULE1_YOURACTIONTYPE_MODULE2'=>array('enabled'=>'! empty($conf->module1->enabled) && ! empty($conf->module2->enabled)', 'picto'=>'yourpicto@gametime')) // Set here all workflow context managed by module
 		//                        );
-		$this->module_parts = array();
+		$this->module_parts = array(
+            'hooks'=>array('contactcard')
+        );
+
 
 		// Data directories to create when module is enabled.
 		// Example: this->dirs = array("/gametime/temp");
@@ -136,7 +139,9 @@ class modGameTime extends DolibarrModules
 		// 'stock'            to add a tab in stock view
 		// 'thirdparty'       to add a tab in third party view
 		// 'user'             to add a tab in user view
-        $this->tabs = array();
+        $this->tabs = array(
+            'contact:+tab'.$this->numero.':Title'.$this->numero.':gametime@gametime::/gametime/gametime.php?fk_contact=__ID__'
+        );
 
         // Dictionaries
 	    if (! isset($conf->gametime->enabled))
