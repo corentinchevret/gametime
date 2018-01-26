@@ -85,4 +85,24 @@ class ActionsGameTime
 			return -1;
 		}
 	}
+
+    function formObjectOptions($parameters, &$object)
+    {
+        global $db, $langs;
+        $res = $db->query("SELECT avg(time) FROM llx_gametime WHERE fk_contact=" . (int)$object->id);
+        $time = $res->fetch_row();
+
+        echo '<tr>
+		  	<td>'.$langs->trans("tempsJeux").'</td>
+			<td colspan="'.$parameters['colspan'].'">~ '.round ($time[0], 0).' h</td>
+		  </tr>';
+
+        $res = $db->query("SELECT MAX(time), title FROM llx_gametime WHERE fk_contact=" . (int)$object->id ." GROUP BY title, time HAVING time=MAX(time)");
+        $time = $res->fetch_row();
+
+        echo '<tr>
+		  	<td>'.$langs->trans('maxTime').'</td>
+			<td colspan="'.$parameters['colspan'].'">'.$time[1].': '.$time[0].'h</td>
+		  </tr>';
+    }
 }

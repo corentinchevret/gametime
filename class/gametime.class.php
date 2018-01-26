@@ -3,6 +3,8 @@
 class GameTime extends SeedObject
 {
 
+    public $element = 'gametime';
+
     function __construct(&$db)
     {
 
@@ -21,21 +23,18 @@ class GameTime extends SeedObject
 
         );
 
-        $result = $this->call_trigger('ORDER_VALIDATE', $user);
-        if ($result < 0) $error++;
+        /*$result = $this->call_trigger('ORDER_VALIDATE', $user);
+        if ($result < 0) $error++;*/
 
         $this->init();
     }
 
-    function fetchByContact($fk_contact)
-    {
+    function fetchByContact($fk_contact) {
+        /*$res = $this->db->query("SELECT * FROM " . MAIN_DB_PREFIX . $this->table_element . " WHERE fk_contact=" . (int)$fk_contact);
 
-        $res = $this->db->query("SELECT rowid FROM " . MAIN_DB_PREFIX . $this->table_element . " 
-			WHERE fk_contact=" . (int)$fk_contact);
         if ($obj = $this->db->fetch_object($res)) {
             return $this->fetchCommon($obj->rowid);
-        }
-
-        return false;
+        }*/
+        return "SELECT tms, title, time FROM " . MAIN_DB_PREFIX . $this->table_element . " WHERE fk_contact=" . (int)$fk_contact;
     }
 }

@@ -7,3 +7,6 @@ GameTimeSetup = GameTime module setup
 GameTimeAbout = About GameTime
 
 Title14995 = Games
+nomJeux = Game Name
+tempsJeux = Game Time
+maxTime = <b>Top</b> Game

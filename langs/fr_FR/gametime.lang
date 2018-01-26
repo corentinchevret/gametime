@@ -7,3 +7,6 @@ GameTimeSetup = Configuration du module GameTime
 GameTimeAbout = A propos du module GameTime
 
 Title14995 = Jeux
+nomJeux = Titre du Jeu
+tempsJeux = Temps de Jeu
+maxTime = Jeu le <b>PLUS</b> joué

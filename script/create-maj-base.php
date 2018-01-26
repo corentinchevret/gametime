@@ -10,14 +10,10 @@ if(!defined('INC_FROM_DOLIBARR')) {
 
 }
 
+global $db;
 
-/* uncomment
+dol_include_once('/gametime/class/gametime.class.php');
 
+$o=new GameTime($db);
+$o->init_db_by_vars();
 
-dol_include_once('/mymodule/class/xxx.class.php');
-
-$PDOdb=new TPDOdb;
-
-$o=new TXXX($db);
-$o->init_db_by_vars($PDOdb);
-*/
