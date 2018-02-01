@@ -16,4 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+## Module Gametime (Développé par VIDAL Benjamin et CHEVRET Corentin)
 
+> Module qui permet d'ajouter des titres de jeux avec un temps de jeu associé à partir de l'onglet "Temps de jeu" de la fiche contact.
+> Le module affiche également la moyenne de temps de jeu du contact et le jeu auquel il joue le plus.
